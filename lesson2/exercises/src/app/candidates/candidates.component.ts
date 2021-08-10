@@ -16,7 +16,8 @@ export class CandidatesComponent implements OnInit {
     {name: 'Champ', data: {age: 9, mass: '36 kg', sidekick: 'Carly'}, image: 'assets/images/Carly.png'}
   ];
 
-  crew = [];
+  crew = []
+ 
 
   constructor() { }
 
@@ -24,7 +25,22 @@ export class CandidatesComponent implements OnInit {
   }
 
   // Code the addToCrew function here:
+  addToCrew(person:object){
+   // console.log(person);
+    //console.log(this.crew);
+    let found = false;
+    for(let member of this.crew){
+      if(person === member){
+        found = true;
+        break;
+      }
+    }
+    if(!found){
+      this.crew.push(person);
+    }
+    
 
+  }
 
   // BONUS: Code the changeMissionName function here:
 
